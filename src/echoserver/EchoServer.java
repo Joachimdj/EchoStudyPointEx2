@@ -44,6 +44,8 @@ public class EchoServer {
   {
     int port = Integer.parseInt(properties.getProperty("port"));
     String ip = properties.getProperty("serverIp");
+     
+         
     
     Logger.getLogger(EchoServer.class.getName()).log(Level.INFO, "Sever started. Listening on: "+port+", bound to: "+ip);
     try {
@@ -61,6 +63,11 @@ public class EchoServer {
   }
 
   public static void main(String[] args) {
+     String logFile = properties.getProperty("logFile");
+    Utils.setLogFile(logFile,EchoServer.class.getName());
     new EchoServer().runServer();
+    Utils.closeLogger(EchoServer.class.getName());
+ 
+  
   }
 }

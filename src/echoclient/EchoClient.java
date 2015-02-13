@@ -1,5 +1,6 @@
 package echoclient;
 
+import echoserver.EchoServer;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.InetAddress;
@@ -9,6 +10,7 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import shared.ProtocolStrings;
+import utils.Utils;
 
 public class EchoClient
 {
@@ -70,6 +72,6 @@ public class EchoClient
       Logger.getLogger(EchoClient.class.getName()).log(Level.SEVERE, null, ex);
     } catch (IOException ex) {
       Logger.getLogger(EchoClient.class.getName()).log(Level.SEVERE, null, ex);
-    }
+    } 
   }
 }
